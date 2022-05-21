@@ -22,6 +22,8 @@ TagManager:
   - Reward
   - objectiveTriangle
   - obstacle
+  - wall
+  - BigObstacle
   layers:
   - Default
   - TransparentFX

@@ -5,70 +5,83 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject square;
-    private bool isAbove;
-    public bool isCatched;
     private bool keyPressed;
-    private Material startingMaterial;
     public float time;
     private int maxtime;
     public int seconds;
+    public List<Obstacle> obstacles;
+    public Obstacle currentObstacle;
+    private bool isCatching;
+    public bool hasCatched;
+
+    
     void Start()
     {
-        time = 0.0f;
-        maxtime = 3;
-        isCatched = false;
-        isAbove = false;
-        startingMaterial = square.transform.GetComponent<Renderer>().material;
+        hasCatched = false;
+        this.obstacles = this.transform.parent.Find("ObjectsManager").GetComponent<ObjectManager>().obstacles;
+        this.isCatching = false;
+        this.currentObstacle = null;
+        this.time = 0.0f;
+        this.maxtime = 3;
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (isAbove)
+            
+        if (isPositioned() && !hasCatched)
         {
-            time += Time.deltaTime;
-            seconds = (int)time % 60;
-            if (seconds >= maxtime)
+            /*foreach(Obstacle obstacle in obstacles)
             {
-                isCatched = true;
+                if (obstacle != currentObstacle)
+                {
+                    obstacle.setMaterial(startingMaterial);
+                }
             }
-            
-        }
-        
-        if(isPositioned()) 
-        {
-            square.GetComponent<MeshRenderer>().material = null;
-            isAbove = true;
-            
+            */
+            this.time += Time.deltaTime;
+            this.seconds = (int)time % 60;
+            if (this.seconds >= this.maxtime)
+            {
+                time = 0;
+                seconds = 0;
+                currentObstacle.setController(this);
+                hasCatched = true;
+                this.isCatching = true;
+            }
         }
         else
         {
-            time = 0.0f;
-            square.transform.GetComponent<MeshRenderer>().material = startingMaterial;
-            isAbove = false;
-
+            time = 0;
+            seconds = 0;
         }
-        if (isCatched)
-        {
-            square.GetComponent<MeshRenderer>().material = transform.Find("Cube").GetComponent<Renderer>().material;
-            square.transform.position = new Vector3(transform.position.x, square.transform.position.y, transform.position.z);
-
-        }
+        
+        
+        
+        
     }
 
     bool isPositioned()
     {
-        
-        bool isPositioned = true;
-        if(!((transform.position.x<=(square.transform.position.x + (square.transform.localScale.x/2)))&& (transform.position.x >= (square.transform.position.x - (square.transform.localScale.x / 2)))))
+        bool isPositioned = false;
+        foreach (Obstacle obstacle in obstacles)
         {
-            isPositioned = false;
-        }
-        if (!((transform.position.z <= (square.transform.position.z + (square.transform.localScale.z / 2))) && (transform.position.z >= (square.transform.position.z - (square.transform.localScale.z / 2)))))
-        {
-            isPositioned = false;
+            bool xPos = (transform.position.x <= (obstacle.transform.position.x + (obstacle.transform.localScale.x / 2))) && (transform.position.x >= (obstacle.transform.position.x - (obstacle.transform.localScale.x / 2)));
+            bool zPos = (transform.position.z <= (obstacle.transform.position.z + (obstacle.transform.localScale.z / 2))) && (transform.position.z >= (obstacle.transform.position.z - (obstacle.transform.localScale.z / 2)));
+            if (xPos && zPos)
+            {
+                isPositioned = true;
+                currentObstacle = obstacle;
+                obstacle.sendIsAbove(true, this);
+            }
+            else
+            {
+                obstacle.sendIsAbove(false, this);
+            }
+           
         }
         return isPositioned;
+        
     }
 }
