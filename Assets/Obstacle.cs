@@ -12,6 +12,7 @@ public class Obstacle : MonoBehaviour
     public Material selectedMaterial;
     private PlayerController aboveController;
     private Transform parent;
+    public int id;
 
     // Start is called before the first frame update
     void Start()

@@ -7,9 +7,17 @@ public class CarryZone : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
     public PlayerController controller;
+    public ObjectManager objectManager;
+    public Vector2 rowsColumns;
+    int numObstacles;
+    public Tapador tapadorPrefab;
+    Vector3 sizes;
+    Vector3 bounds;
+    public float value;
+    public Transform tapadores;
     void Start()
     {
-        
+        tapadores = transform.parent.Find("Tapadores");
     }
 
     // Update is called once per frame
@@ -29,6 +37,17 @@ public class CarryZone : MonoBehaviour
                 collision.transform.GetComponent<Obstacle>().isCatched = false;
                 collision.transform.GetComponent<Obstacle>().controller.hasCatched = false;
                 controller.seconds = 0;
+
+
+                for (int i = 0; i < tapadores.childCount; i++)
+                {
+                    if (tapadores.GetChild(i).GetComponent<Tapador>().id == collision.gameObject.GetComponent<Obstacle>().id)
+                        tapadores.GetChild(i).gameObject.SetActive(false);
+                }
+
+                collision.gameObject.SetActive(false);
+
+                
             }
                 
             else
@@ -44,10 +63,19 @@ public class CarryZone : MonoBehaviour
                 collision.transform.parent.GetChild(1).GetComponent<Obstacle>().controller.seconds = 0;
 
 
+                
+
+                for (int i = 0; i < tapadores.childCount; i++)
+                {
+                    if (tapadores.GetChild(i).GetComponent<Tapador>().id == collision.transform.parent.GetChild(0).GetComponent<Obstacle>().id || tapadores.GetChild(i).GetComponent<Tapador>().id == collision.transform.parent.GetChild(1).GetComponent<Obstacle>().id)
+                        tapadores.GetChild(i).gameObject.SetActive(false);
+                }
+
+                collision.transform.parent.GetChild(0).gameObject.SetActive(false);
+                collision.transform.parent.GetChild(1).gameObject.SetActive(false);
+
 
             }
-
-
         }
     }
 }
