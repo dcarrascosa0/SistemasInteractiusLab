@@ -3810,7 +3810,7 @@ GameObject:
   - component: {fileID: 706155102}
   - component: {fileID: 706155103}
   m_Layer: 0
-  m_Name: Doors
+  m_Name: Doors & Triggers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

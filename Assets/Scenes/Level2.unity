@@ -4075,10 +4075,10 @@ Transform:
   - {fileID: 939658871}
   - {fileID: 216053068}
   - {fileID: 1737093488}
+  - {fileID: 1469290892}
   - {fileID: 1326250004}
   - {fileID: 2050879887}
   - {fileID: 1633928642}
-  - {fileID: 1469290892}
   - {fileID: 1030237654}
   m_Father: {fileID: 1600339210}
   m_RootOrder: 1
@@ -12830,7 +12830,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1532564561}
   m_Layer: 0
-  m_Name: Doors&Triggers
+  m_Name: Doors &Triggers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
