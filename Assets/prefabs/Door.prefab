@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1099852014}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,4 +128,5 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
+  id: 0
   speed: 2

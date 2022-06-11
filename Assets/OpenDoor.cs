@@ -8,11 +8,11 @@ public class OpenDoor : MonoBehaviour
     public GameObject[] waypoints;
     public int id;
 
-    int current = 0;
+    public int current = 0;
     float rotSpeed;
     public float speed;
 
-    bool move = false;
+    public bool move = false;
 
     private void Start()
     {
@@ -51,10 +51,7 @@ public class OpenDoor : MonoBehaviour
     }
     /*void OnTriggerExit(int id)
     {
-        if (id == this.id)
-        {
-            current = 0;
-        }
+        move = true;
     }*/
 
     private void OnDestroy()

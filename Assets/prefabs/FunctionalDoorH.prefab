@@ -87,7 +87,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643268791088504439}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -47.24, y: 2.75, z: -21.65}
+  m_LocalPosition: {x: -44.17, y: 2.75, z: -21.65}
   m_LocalScale: {x: 0.60541344, y: 4.8729, z: 2.7202952}
   m_Children: []
   m_Father: {fileID: 1643268790063263897}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 1453521332659742101}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,7 +123,7 @@ Transform:
   m_GameObject: {fileID: 8807659995093718968}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: -50.61, y: 2.75, z: -21.65}
-  m_LocalScale: {x: 0.60541344, y: 4.8729, z: 2.7202952}
+  m_LocalScale: {x: 0.60541344, y: 4.8729, z: 6.663908}
   m_Children: []
   m_Father: {fileID: 1643268790063263897}
   m_RootOrder: 0
@@ -221,5 +221,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 1643268791088504439}
   - {fileID: 1643268789940712200}
-  id: 4
-  speed: 2
+  id: 3
+  current: 0
+  speed: 4
+  move: 0

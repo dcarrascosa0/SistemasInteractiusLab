@@ -14,6 +14,8 @@ public class DoorEvents : MonoBehaviour
     }
 
     public event Action<int> onDoorTriggerEnter;
+    public event Action<int> onDoorTriggerExit;
+
     public void DoorTriggerEnter(int id)
     {
         if (onDoorTriggerEnter != null)
@@ -21,12 +23,12 @@ public class DoorEvents : MonoBehaviour
             onDoorTriggerEnter(id);
         }
     }
-    /*public event Action<int> onDoorTriggerExit;
+    
     public void DoorTriggerExit(int id)
     {
         if (onDoorTriggerExit != null)
         {
             onDoorTriggerExit(id);
         }
-    }*/
+    }
 }
