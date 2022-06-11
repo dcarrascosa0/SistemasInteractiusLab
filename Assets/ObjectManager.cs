@@ -17,6 +17,7 @@ public class ObjectManager : MonoBehaviour
     public string file;
     public int index;
     public Material mat;
+    public List<Vector3> positions;
     
     void Start()
     {
@@ -28,7 +29,7 @@ public class ObjectManager : MonoBehaviour
         for (int i = 0; i < numObstacles; i++)
         {
             
-            GameObject myObs = Instantiate(obstacle, new Vector3(Random.Range(17, 90), -10.0f, Random.Range(8, 83)), Quaternion.identity,transform.parent.Find("Obstacles"));
+            GameObject myObs = Instantiate(obstacle, new Vector3(positions[index-1].x, -10.0f, positions[index - 1].z), Quaternion.identity,transform.parent.Find("Obstacles"));
             myObs.GetComponent<Obstacle>().starterMaterial = files[index];
             myObs.GetComponent<Obstacle>().id = int.Parse(files[index].name.Split(' ')[files[index].name.Split(' ').Length-1]);
             obstacles.Add(myObs.GetComponent<Obstacle>());
@@ -37,7 +38,7 @@ public class ObjectManager : MonoBehaviour
 
         for (int i = 0; i < numBigObstacles; i++)
         {
-            GameObject myObs = Instantiate(bigObstacle, new Vector3(Random.Range(17, 90), -10.0f, Random.Range(8, 83)), Quaternion.identity, transform.parent.Find("Obstacles"));
+            GameObject myObs = Instantiate(bigObstacle, new Vector3(positions[index - 1].x, -10.0f, positions[index - 1].z), Quaternion.identity, transform.parent.Find("Obstacles"));
             for(int j=0;j < myObs.transform.childCount; j++)
             {
                 myObs.transform.GetChild(j).GetComponent<Obstacle>().starterMaterial = files[index];

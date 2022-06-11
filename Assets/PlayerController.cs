@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public Obstacle currentObstacle;
     private bool isCatching;
     public bool hasCatched;
+    Vector3 currentPosition;
+    float stayTime;
 
     
     void Start()
@@ -23,13 +25,13 @@ public class PlayerController : MonoBehaviour
         this.currentObstacle = null;
         this.time = 0.0f;
         this.maxtime = 3;
-        
+        currentPosition = transform.position;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-            
+        
         if (isPositioned() && !hasCatched)
         {
             /*foreach(Obstacle obstacle in obstacles)
@@ -55,6 +57,28 @@ public class PlayerController : MonoBehaviour
         {
             time = 0;
             seconds = 0;
+        }
+
+        if (hasCatched)
+        {
+            if (currentPosition != transform.position)
+            {
+                currentPosition = transform.position;
+                stayTime = 0.0f;
+            }
+                
+            else
+            {
+                stayTime += Time.deltaTime;
+            }
+
+            if (stayTime > 3.0f)
+            {
+                time = 0.0f;
+                currentObstacle.isCatched = false;
+                hasCatched = false;
+                seconds = 0;
+            }
         }
         
         
