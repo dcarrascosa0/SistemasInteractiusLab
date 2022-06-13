@@ -4290,7 +4290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   live: 0
-  manualSpeed: 0.01
+  manualSpeed: 0.001
   positions: []
 --- !u!1001 &838193331
 PrefabInstance:
@@ -6626,7 +6626,7 @@ PrefabInstance:
     - target: {fileID: 4073720885902687923, guid: 6ab6ff4a781d2be43b93ea33b19b71f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.969315
+      value: 38.4
       objectReference: {fileID: 0}
     - target: {fileID: 4073720885902687923, guid: 6ab6ff4a781d2be43b93ea33b19b71f7,
         type: 3}
@@ -6636,7 +6636,7 @@ PrefabInstance:
     - target: {fileID: 4073720885902687923, guid: 6ab6ff4a781d2be43b93ea33b19b71f7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 95.170944
+      value: 91.2
       objectReference: {fileID: 0}
     - target: {fileID: 4073720885902687923, guid: 6ab6ff4a781d2be43b93ea33b19b71f7,
         type: 3}
@@ -9342,7 +9342,7 @@ GameObject:
   - component: {fileID: 1946798565}
   - component: {fileID: 1946798564}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Carryzone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9459,7 +9459,7 @@ PrefabInstance:
     - target: {fileID: 6102472184185713388, guid: 2b1f0ea61bac54a4298ff8778dddd90c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.6
+      value: 26.6
       objectReference: {fileID: 0}
     - target: {fileID: 6102472184185713388, guid: 2b1f0ea61bac54a4298ff8778dddd90c,
         type: 3}
@@ -9469,7 +9469,7 @@ PrefabInstance:
     - target: {fileID: 6102472184185713388, guid: 2b1f0ea61bac54a4298ff8778dddd90c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 31.9
+      value: 28.8
       objectReference: {fileID: 0}
     - target: {fileID: 6102472184185713388, guid: 2b1f0ea61bac54a4298ff8778dddd90c,
         type: 3}
@@ -9510,11 +9510,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StayNormalTriggerPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 6102472184185713391, guid: 2b1f0ea61bac54a4298ff8778dddd90c,
-        type: 3}
-      propertyPath: id
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6102472184185713391, guid: 2b1f0ea61bac54a4298ff8778dddd90c,
         type: 3}
