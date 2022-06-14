@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5690840000236316858}
   - component: {fileID: 5690840000236316857}
   - component: {fileID: 5690840000236316856}
-  - component: {fileID: 7266418175673727378}
+  - component: {fileID: -3706374958381016283}
   m_Layer: 0
   m_Name: Cube
   m_TagString: obstacle
@@ -113,7 +113,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7266418175673727378
+--- !u!114 &-3706374958381016283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,3 +131,4 @@ MonoBehaviour:
   controller: {fileID: 0}
   starterMaterial: {fileID: 2100000, guid: 3331a2fef30d05949ade1e3ebe8b8956, type: 2}
   selectedMaterial: {fileID: 2100000, guid: 0c27170c40f3d4d439eb076ddef1c8a3, type: 2}
+  id: 0
