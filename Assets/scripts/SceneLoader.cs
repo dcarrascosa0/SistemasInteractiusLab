@@ -25,4 +25,16 @@ public class SceneLoader : MonoBehaviour
             }
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+         if(sceneName == "Level1")
+         {
+            SceneManager.LoadScene("Level1");
+         }
+         if(sceneName == "Level2")
+         {
+            SceneManager.LoadScene("Level2");
+         }
+    }
 }
