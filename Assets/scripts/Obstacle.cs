@@ -56,7 +56,7 @@ public class Obstacle : MonoBehaviour
                     Vector3 position2 = parent.GetChild(1).GetComponent<Obstacle>().controller.transform.position;
                     Vector3 middlePosition = (position1 + position2) / 2.0f;
 
-                    if(Vector3.Distance(position1,position2)<=2)
+                    if(Vector3.Distance(position1,position2)<=5)
                         if(Vector2.Distance(new Vector2(middlePosition.x,middlePosition.z), new Vector2(parent.transform.position.x,parent.transform.position.z))<=5)
                         parent.transform.position = new Vector3(middlePosition.x, parent.transform.position.y, middlePosition.z);
                 }

@@ -41,6 +41,7 @@ public class ObjectManager : MonoBehaviour
             GameObject myObs = Instantiate(bigObstacle, new Vector3(positions[index - 1].x, -10.0f, positions[index - 1].z), Quaternion.identity, transform.parent.Find("Obstacles"));
             for(int j=0;j < myObs.transform.childCount; j++)
             {
+                myObs.transform.GetChild(j).GetComponent<Obstacle>().id = int.Parse(files[index].name.Split(' ')[files[index].name.Split(' ').Length - 1]);
                 myObs.transform.GetChild(j).GetComponent<Obstacle>().starterMaterial = files[index];
                 obstacles.Add(myObs.transform.GetChild(j).gameObject.GetComponent<Obstacle>());
                 index += 1;
